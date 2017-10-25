@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url("../fonts/Gotham-Light.eot");
+    src: url("../fonts/Gotham-Light.woff") format("woff");
+    font-style: normal;
+    font-stretch: normal;
+}
+
+.hdx-3w-chart.dc-chart g.row text {
+    fill: black;
+    font-family: Gotham-Light;
+}
+
+.project.dc-chart g.row text {
+    fill: black;
+}
+
+.hdx-3w-chart.dc-chart .axis {
+    display: none;
+}
+
+.hdx-3w-chart.dc-chart svg {
+    padding-left: 0px;
+}
+
+.project.dc-chart .axis {
+    display: none;
+}
+
+#map {
+    height: 650px;
+    width: 100%;
+}
+
+#hdx-3W-who {
+    height: 450px;
+}
+
+#wheretitle {
+    padding-bottom: 10px;
+}
+
+#header {
+    border-bottom-color: #dddddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-bottom: 15px;
+}
+
+.colheight {
+    height: 450px;
+}
+
+.removepadding {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.hdx-3w-chart {
+    width: 100%;
+}
+
+#project {
+    width: 400px;
+}
+
+.hdx-3w-info {
+    padding: 5px;
+    background-color: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+#description {
+    text-align: justify;
+    padding-top: 10px;
+    font-family: Gotham-Light;
+}
+
+h5 {
+    font-size: em;
+    font-family: Gotham-Light;
+}
+
+#keyFigures p {
+    font-size: 2.4em;
+    color: #03a9f4;
+}
+
+#reset {
+    float: right;
+}
+
+.col-xs-6 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#note {
+    font-family: Gotham-Light;
+    font-size: 11px;
+}
