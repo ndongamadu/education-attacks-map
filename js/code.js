@@ -5,9 +5,10 @@ var map = L.map('map',
         minZoom: 2
     });
 
-map.setView([9.58, 10.37], 3);
+map.setView([13.67, 22.15], 3);
+//map.setView([9.58, 10.37], 3);
 
-
+//3/13.67/
 L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/traffic-day-v2/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYW1hZG91MTciLCJhIjoib3NhRnROQSJ9.lW0PVXVIS-j8dGaULTyupg', {
     attribution: '<a href="http://mapbox.com">Mapbox</a>'
 }).addTo(map);
@@ -17,22 +18,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/traffic-day-v2/tiles/256/{z
 
 var geojson;
 
-//var info = L.control();
-//
-//info.onAdd = function (map) {
-//    this._div = L.DomUtil.create('div', 'info');
-//    this.update();
-//    return this._div;
-//};
-
-//info.update = function (props) {
-//
-//    this._div.innerHTML = '<h4>HNO</h4>' + (props ?
-//        '<h5>Availability: ' + (props.hno).toUpperCase() + '</h5><a target="_blank" href="' + props.hdx + '">' + props.name + ' dataset</a><br />' :
-//        'Hover over a state');
-//};
-
-//info.addTo(map);
 
 function highlightFeature(e) {
     var layer = e.target;
@@ -48,8 +33,6 @@ function highlightFeature(e) {
         layer.bringToFront();
     }
 
-    //    info.update(layer.feature.properties);
-    //    //updateKeyFigures(layer.feature.properties);
 }
 
 function resetHighlight(e) {
@@ -66,13 +49,8 @@ function onEachFeature(feature, layer) {
         mouseout: resetHighlight,
         //click: zoomToFeature
     });
-    layer.bindPopup('<h5>' + feature.properties.name + '</h5><h4>' + feature.properties.affecte + '</h4><h5>' +
-        feature.properties.description + '</h5>');
-    //    if (feature.properties.hdx != '') {
-    //        layer.bindPopup('<h4>' + feature.properties.name + '</h4><h5><a target="_blank" href="' + feature.properties.hdx + '"> View dataset on HDX </a></h5>');
-    //    } else {
-    //        layer.bindPopup('<h4>' + feature.properties.name + '</h4><h5>Dataset not available</h5>');
-    //    }
+    layer.bindPopup('<h5>' + feature.properties.name + '</h5><h4>' + feature.properties.affecte + '</h4>');
+
 }
 
 
@@ -87,19 +65,19 @@ function style(feature) {
         };
     } else if (feature.properties.affecte == 'Heavily Affected') {
         return {
-            fillColor: '#fc9272',
+            fillColor: '#2b8cbe',
             weight: 2,
             opacity: 0.6,
-            color: 'red',
+            //            color: 'red',
             //dashArray: '3',
             fillOpacity: 0.5
         };
     } else if (feature.properties.affecte == 'Affected') {
         return {
-            fillColor: '#fee0d2',
+            fillColor: '#ffeda0',
             weight: 2,
             opacity: 0.6,
-            color: 'red',
+            color: '#feb24c',
             //dashArray: '3',
             fillOpacity: 0.5
         };
@@ -111,3 +89,37 @@ geojson = L.geoJson(countries, {
     style: style,
     onEachFeature: onEachFeature
 }).addTo(map);
+
+function getColor(d) {
+    return d > 1000 ? '#800026' :
+        d > 500 ? '#BD0026' :
+        d > 200 ? '#E31A1C' :
+        d > 100 ? '#FC4E2A' :
+        d > 50 ? '#FD8D3C' :
+        d > 20 ? '#FEB24C' :
+        d > 10 ? '#FED976' :
+        '#FFEDA0';
+}
+
+
+//
+//var legend = L.control({
+//    position: 'bottomright'
+//});
+//
+//legend.onAdd = function (map) {
+//
+//    var div = L.DomUtil.create('div', 'info legend'),
+//
+//    div.innerHTML +=
+//        '<i style="background:#FF493D">Very heavily affected</i>  <br/'
+//    div.innerHTML +=
+//        '<i style="background:#2b8cbe">Heavily affected</i>  <br/'
+//    div.innerHTML +=
+//        '<i style="background:#ffeda0">Affected</i>  <br/'
+//
+//
+//    return div;
+//};
+//
+//legend.addTo(map);
