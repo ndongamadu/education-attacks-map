@@ -65,19 +65,19 @@ function style(feature) {
         };
     } else if (feature.properties.affecte == 'Heavily Affected') {
         return {
-            fillColor: '#2b8cbe',
+            fillColor: '#FF9B4B',
             weight: 2,
             opacity: 0.6,
-            //            color: 'red',
+            color: '#FF9B4B',
             //dashArray: '3',
             fillOpacity: 0.5
         };
     } else if (feature.properties.affecte == 'Affected') {
         return {
-            fillColor: '#ffeda0',
+            fillColor: '#FFED59',
             weight: 2,
-            opacity: 0.6,
-            color: '#feb24c',
+            opacity: 0.2,
+            color: '#FFED59',
             //dashArray: '3',
             fillOpacity: 0.5
         };

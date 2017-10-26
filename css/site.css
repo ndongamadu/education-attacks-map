@@ -54,14 +54,7 @@
     width: 25px;
 }
 
-.col-xs-4 .col-md-10 {
-    text-align: justify;
-}
-
 .col-xs-4 .col-md-10 p {
     font-family: Gotham-Light;
-}
-
-.strong {
-    text-decoration: underline;
+    text-align: justify;
 }
