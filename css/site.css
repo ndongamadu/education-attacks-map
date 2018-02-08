@@ -6,9 +6,6 @@
     font-stretch: normal;
 }
 
-.eaa {
-    height: 95px;
-}
 
 #map {
     height: 650px;
@@ -24,10 +21,6 @@
 
 #description {
     text-align: justify;
-/*
-    padding-left: 0px;
-    padding-right: 0px;
-*/
     font-family: Gotham-Light;
 }
 
